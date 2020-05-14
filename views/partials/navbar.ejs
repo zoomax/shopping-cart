@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/shop">Navbar</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <% if (login) { %>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto clearfix">
+      <li class="nav-item pull-right">
+        <a class="nav-link" href="/shop/cart">
+          <i class="fa fa-shopping-cart fa-lg"></i> Shopping Cart <%if(typeof cart!= "undefined") {%>
+          <span class="badge badge-danger"><%=cart.totalQty%> </span> <% }%>
+           
+        </a>
+      </li>
+      
+      <li class="nav-item dropdown pull-right">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="navbarDropdown"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          
+            User Management
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/users/profile">
+            <i class="fa fa-user fa-lg"></i> User Account </a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/users/logout">Logout</a>
+       
+        </div>
+      </li>
+    </ul>
+  </div>
+  <% } %>
+
+</nav>

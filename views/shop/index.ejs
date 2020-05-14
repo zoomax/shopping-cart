@@ -1,0 +1,23 @@
+<div class="card-group">
+  <div class="row">
+    <%products.forEach(element => {%>
+    <div class="col-md-4 my-4">
+      <div class="card">
+        <img src="<%- element.imagePath %> " class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title"><%-element.title%></h5>
+          <p class="card-text"><%-element.description%></p>
+          <div class="clearfix">
+            <h2>$<%-element.price%></h2>
+            <a href="/shop/cart/<%-element._id%>" class="pull-right btn btn-success">
+              <i class="fa fa-shopping-cart fa-lg"></i>
+              &nbsp;Add To Cart</a
+            >
+          </div>
+        </div>
+      </div>
+      
+    </div>  
+    <%}); %>
+  </div>
+</div>

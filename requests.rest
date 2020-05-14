@@ -1,0 +1,11 @@
+GET  http://localhost:3000/users/profile
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNWViOTI5NGRhYWUzYTEyODU4NDgwMjlhIiwiaWF0IjoxNTg5MTkzMDM3fQ.YRm-Mn4o7yr0XkroMvRfqAIS5gA-UwWhgqvb-sdli5A
+
+###
+POST  http://localhost:3000/users/signup
+Content-Type: application/json 
+
+{
+    "email" : "hazem.radwan@gmail.com" , 
+    "password" : "222222"
+}

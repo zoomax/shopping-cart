@@ -1,0 +1,57 @@
+<% if(typeof cart!= "undefined"){%>
+<div class="row">
+  <div class="col-md-3 col-sm-3"></div>
+  <div class="col-md-6 col-sm-6">
+    <ul class="list-group">
+      <% cart.items.forEach((product)=>{ %>
+
+      <li class="list-group-item clearfix">
+        <span class=" mt-2 badge badge-success pull-right" > <%- product.qty %> </span>
+        <strong><%-product.title%></strong>
+        <span class="label label-success"><%-product.price*product.qty %></span>
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary btn-sx dropdown-toggle">
+            Action
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="#">Reduce by 1</a></li>
+            <li><a href="#">Remove all</a></li>
+          </ul>
+        </div>
+      </li>
+      <% }) %>
+    </ul>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-3 col-sm-3"></div>
+  <div class="col-md-6 col-sm-6">
+      <br>
+    <strong>total:<%- cart.totalPrice %> </strong>
+  </div>
+</div>
+
+<br />
+<div class="row">
+  <div class="col-md-3 col-sm-3"></div>
+  <div class="col-md-6 col-sm-6">
+    <a class="btn btn-success" href="/shop/checkout">Checkout</a>
+  </div>
+</div>
+<br />
+
+
+<% } %>
+
+
+
+
+<% if (typeof cart == "undefined"){ %>
+<div class="row">
+  <div class="col-md-3 col-sm-3"></div>
+  <div class="col-md-6 col-sm-6">
+    <h2>no items in the cart</h2>
+  </div>
+</div>
+<br />
+<% } %>
